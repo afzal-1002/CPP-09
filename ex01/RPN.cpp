@@ -4,13 +4,9 @@
 #include <sstream>
 #include <stdexcept>
 
-RPN::RPN()
-{
-}
+RPN::RPN() {}
 
-RPN::RPN(const RPN &other) : stack(other.stack)
-{
-}
+RPN::RPN(const RPN &other) : stack(other.stack) { }
 
 RPN &RPN::operator=(const RPN &other)
 {
@@ -19,9 +15,7 @@ RPN &RPN::operator=(const RPN &other)
 	return *this;
 }
 
-RPN::~RPN()
-{
-}
+RPN::~RPN(){}
 
 // Take the top number out of the stack
 long RPN::popNumber()
