@@ -1,8 +1,5 @@
 #include "RPN.hpp"
 
-#include <cctype>
-#include <sstream>
-#include <stdexcept>
 
 RPN::RPN() {}
 
@@ -30,6 +27,11 @@ long RPN::popNumber()
 // Example: "3 4 +"  ->  push 3, push 4, see '+', pop 4 and 3, push 7
 long RPN::calculate(const std::string &expression)
 {
+
+	// std::istringstream turns a string into a 
+	// stream that you can read word by word with >>, 
+	// just like reading from std::cin.
+
 	std::istringstream stream(expression);
 	std::string token;
 

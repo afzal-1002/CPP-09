@@ -1,11 +1,5 @@
 #include "BitcoinExchange.hpp"
 
-#include <cctype>
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <stdexcept>
-
 BitcoinExchange::BitcoinExchange()
 {
 }
@@ -100,7 +94,7 @@ void BitcoinExchange::loadDatabase(const std::string &fileName)
 		throw std::runtime_error("database is empty.");
 }
 
-// Read the input file and print "date => value = value * price"
+// Read the input file and print "date => value * rate = total"
 void BitcoinExchange::processInput(const std::string &fileName)
 {
 	std::ifstream file(fileName.c_str());
@@ -152,6 +146,6 @@ void BitcoinExchange::processInput(const std::string &fileName)
 		}
 		--it;
 
-		std::cout << date << " => " << value << " = " << value * it->second << std::endl;
+		std::cout << date << " => " << value << " * " << it->second << " = " << value * it->second << std::endl;
 	}
 }
